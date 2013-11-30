@@ -1,0 +1,228 @@
+<!-- ***** BEGIN LICENSE BLOCK *****
+   -
+   - Copyright 2013 Namit Bhalla (oyenamit@gmail.com)
+   -
+   - Licensed under the Apache License, Version 2.0 (the "License");
+   - you may not use this file except in compliance with the License.
+   - You may obtain a copy of the License at
+   -
+   -     http://www.apache.org/licenses/LICENSE-2.0
+   -
+   - Unless required by applicable law or agreed to in writing, software
+   - distributed under the License is distributed on an "AS IS" BASIS,
+   - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   - See the License for the specific language governing permissions and
+   - limitations under the License.
+   -
+   - The original code is the "Penny: IMDB Boards Formatting Helper" Firefox extension.
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+
+<!ENTITY penny.menu.context.label           "IMDB Boards Formatting">
+<!ENTITY penny.menuitem.bold.label           "Bold">
+<!ENTITY penny.menuitem.italics.label           "Italics">
+<!ENTITY penny.menuitem.url.label           "URL">
+<!ENTITY penny.menuitem.email.label           "Email">
+<!ENTITY penny.menuitem.pre.label           "Pre-formatted">
+<!ENTITY penny.menuitem.quote.label           "Quote">
+<!ENTITY penny.menuitem.spoiler.label           "Spoiler">
+<!ENTITY penny.menu.colors.label           "Colors">
+<!ENTITY penny.menuitem.colors.red.label           "Red">
+<!ENTITY penny.menuitem.colors.green.label           "Green">
+<!ENTITY penny.menuitem.colors.blue.label           "Blue">
+<!ENTITY penny.menuitem.colors.orange.label           "Orange">
+<!ENTITY penny.menuitem.colors.black.label           "Black">
+<!ENTITY penny.menuitem.colors.white.label           "White">
+<!ENTITY penny.menuitem.colors.yellow.label           "Yellow">
+<!ENTITY penny.menuitem.colors.purple.label           "Purple">
+
+<!ENTITY penny.menu.iconbasic.label           "Icons Basic">
+<!ENTITY penny.menuitem.iconbasic.4eyes.label           "4eyes">
+<!ENTITY penny.menuitem.iconbasic.afro.label           "afro">
+<!ENTITY penny.menuitem.iconbasic.angel.label           "angel">
+<!ENTITY penny.menuitem.iconbasic.angry.label           "angry">
+<!ENTITY penny.menuitem.iconbasic.argue.label           "argue">
+<!ENTITY penny.menuitem.iconbasic.aura.label           "aura">
+<!ENTITY penny.menuitem.iconbasic.bigeek.label           "bigeek">
+<!ENTITY penny.menuitem.iconbasic.biggrin.label           "biggrin">
+<!ENTITY penny.menuitem.iconbasic.bigrazz.label           "bigrazz">
+<!ENTITY penny.menuitem.iconbasic.birthday.label           "birthday">
+<!ENTITY penny.menuitem.iconbasic.blah.label           "blah">
+<!ENTITY penny.menuitem.iconbasic.blush.label           "blush">
+<!ENTITY penny.menuitem.iconbasic.bounce.label           "bounce">
+<!ENTITY penny.menuitem.iconbasic.caver.label           "caver">
+<!ENTITY penny.menuitem.iconbasic.chatty.label           "chatty">
+<!ENTITY penny.menuitem.iconbasic.cheers.label           "cheers">
+<!ENTITY penny.menuitem.iconbasic.cloak.label           "cloak">
+<!ENTITY penny.menuitem.iconbasic.clown.label           "clown">
+<!ENTITY penny.menuitem.iconbasic.colorful.label           "colorful">
+<!ENTITY penny.menuitem.iconbasic.confused.label           "confused">
+<!ENTITY penny.menuitem.iconbasic.cool.label           "cool">
+<!ENTITY penny.menuitem.iconbasic.cry.label           "cry">
+<!ENTITY penny.menuitem.iconbasic.dead.label           "dead">
+<!ENTITY penny.menuitem.iconbasic.devil.label           "devil">
+<!ENTITY penny.menuitem.iconbasic.eek.label           "eek">
+<!ENTITY penny.menuitem.iconbasic.embarrassed.label           "embarrassed">
+<!ENTITY penny.menuitem.iconbasic.explode.label           "explode">
+<!ENTITY penny.menuitem.iconbasic.eyes.label           "eyes">
+<!ENTITY penny.menuitem.iconbasic.frozen.label           "frozen">
+<!ENTITY penny.menuitem.iconbasic.glasses.label           "glasses">
+<!ENTITY penny.menuitem.iconbasic.gonemad.label           "gonemad">
+<!ENTITY penny.menuitem.iconbasic.gum.label           "gum">
+<!ENTITY penny.menuitem.iconbasic.hehe.label           "hehe">
+<!ENTITY penny.menuitem.iconbasic.hide.label           "hide">
+<!ENTITY penny.menuitem.iconbasic.iloveu.label           "iloveu">
+<!ENTITY penny.menuitem.iconbasic.interest.label           "interest">
+<!ENTITY penny.menuitem.iconbasic.joker.label           "joker">
+<!ENTITY penny.menuitem.iconbasic.kiss.label           "kiss">
+<!ENTITY penny.menuitem.iconbasic.laugh.label           "laugh">
+<!ENTITY penny.menuitem.iconbasic.newbie.label           "newbie">
+<!ENTITY penny.menuitem.iconbasic.ninja.label           "ninja">
+<!ENTITY penny.menuitem.iconbasic.no.label           "no">
+<!ENTITY penny.menuitem.iconbasic.noir.label           "noir">
+<!ENTITY penny.menuitem.iconbasic.none.label           "none">
+<!ENTITY penny.menuitem.iconbasic.odd.label           "odd">
+<!ENTITY penny.menuitem.iconbasic.out.label           "out">
+<!ENTITY penny.menuitem.iconbasic.party.label           "party">
+<!ENTITY penny.menuitem.iconbasic.popcorn.label           "popcorn">
+<!ENTITY penny.menuitem.iconbasic.rainbow.label           "rainbow">
+<!ENTITY penny.menuitem.iconbasic.razz.label           "razz">
+<!ENTITY penny.menuitem.iconbasic.roll.label           "roll">
+<!ENTITY penny.menuitem.iconbasic.roll2.label           "roll2">
+<!ENTITY penny.menuitem.iconbasic.royal.label           "royal">
+<!ENTITY penny.menuitem.iconbasic.sad.label           "sad">
+<!ENTITY penny.menuitem.iconbasic.shy.label           "shy">
+<!ENTITY penny.menuitem.iconbasic.sigh.label           "sigh">
+<!ENTITY penny.menuitem.iconbasic.sleep.label           "sleep">
+<!ENTITY penny.menuitem.iconbasic.smile.label           "smile">
+<!ENTITY penny.menuitem.iconbasic.smoke1.label           "smoke1">
+<!ENTITY penny.menuitem.iconbasic.snow.label           "snow">
+<!ENTITY penny.menuitem.iconbasic.sword.label           "sword">
+<!ENTITY penny.menuitem.iconbasic.trendy.label           "trendy">
+<!ENTITY penny.menuitem.iconbasic.uhoh.label           "uhoh">
+<!ENTITY penny.menuitem.iconbasic.upset.label           "upset">
+<!ENTITY penny.menuitem.iconbasic.wave.label           "wave">
+<!ENTITY penny.menuitem.iconbasic.weird.label           "weird">
+<!ENTITY penny.menuitem.iconbasic.white.label           "white">
+<!ENTITY penny.menuitem.iconbasic.wild.label           "wild">
+<!ENTITY penny.menuitem.iconbasic.wink.label           "wink">
+<!ENTITY penny.menuitem.iconbasic.winkgrin.label           "winkgrin">
+<!ENTITY penny.menuitem.iconbasic.yes.label           "yes">
+<!ENTITY penny.menu.iconanimals.label           "Icons Animals">
+<!ENTITY penny.menuitem.iconanimals.animal.label           "animal">
+<!ENTITY penny.menuitem.iconanimals.bunny.label           "bunny">
+<!ENTITY penny.menuitem.iconanimals.butterfly.label           "butterfly">
+<!ENTITY penny.menuitem.iconanimals.cat.label           "cat">
+<!ENTITY penny.menuitem.iconanimals.cats.label           "cats">
+<!ENTITY penny.menuitem.iconanimals.dog.label           "dog">
+<!ENTITY penny.menuitem.iconanimals.flowercat.label           "flowercat">
+<!ENTITY penny.menuitem.iconanimals.nicebat.label           "nicebat">
+<!ENTITY penny.menuitem.iconanimals.pig.label           "pig">
+<!ENTITY penny.menuitem.iconanimals.spider.label           "spider">
+<!ENTITY penny.menuitem.iconanimals.whitecat.label           "whitecat">
+<!ENTITY penny.menu.iconconfused.label           "Icons Confused">
+<!ENTITY penny.menuitem.iconconfused.change.label           "change">
+<!ENTITY penny.menuitem.iconconfused.conf1.label           "conf1">
+<!ENTITY penny.menuitem.iconconfused.conf2.label           "conf2">
+<!ENTITY penny.menuitem.iconconfused.conf3.label           "conf3">
+<!ENTITY penny.menuitem.iconconfused.devilconf.label           "devilconf">
+<!ENTITY penny.menuitem.iconconfused.giveup.label           "giveup">
+<!ENTITY penny.menuitem.iconconfused.help.label           "help">
+<!ENTITY penny.menuitem.iconconfused.hmm.label           "hmm">
+<!ENTITY penny.menuitem.iconconfused.mjeyds.label           "mjeyds">
+<!ENTITY penny.menuitem.iconconfused.wazup.label           "wazup">
+<!ENTITY penny.menu.iconcool.label           "Icons Cool">
+<!ENTITY penny.menuitem.iconcool.cool1.label           "cool1">
+<!ENTITY penny.menuitem.iconcool.cool2.label           "cool2">
+<!ENTITY penny.menuitem.iconcool.cooldance.label           "cooldance">
+<!ENTITY penny.menuitem.iconcool.cooldance2.label           "cooldance2">
+<!ENTITY penny.menuitem.iconcool.coolmonkey.label           "coolmonkey">
+<!ENTITY penny.menuitem.iconcool.hasta.label           "hasta">
+<!ENTITY penny.menuitem.iconcool.trum.label           "trum">
+<!ENTITY penny.menu.iconhappy.label           "Icons Happy">
+<!ENTITY penny.menuitem.iconhappy.2face.label           "2face">
+<!ENTITY penny.menuitem.iconhappy.3c.label           "3c">
+<!ENTITY penny.menuitem.iconhappy.3eyes.label           "3eyes">
+<!ENTITY penny.menuitem.iconhappy.blink.label           "blink">
+<!ENTITY penny.menuitem.iconhappy.clap.label           "clap">
+<!ENTITY penny.menuitem.iconhappy.hat.label           "hat">
+<!ENTITY penny.menuitem.iconhappy.hippy.label           "hippy">
+<!ENTITY penny.menuitem.iconhappy.sombrero.label           "sombrero">
+<!ENTITY penny.menuitem.iconhappy.square.label           "square">
+<!ENTITY penny.menuitem.iconhappy.wave3.label           "wave3">
+<!ENTITY penny.menuitem.iconhappy.xmas.label           "xmas">
+<!ENTITY penny.menu.iconjumping.label           "Icons Jumping">
+<!ENTITY penny.menuitem.iconjumping.jump1.label           "jump1">
+<!ENTITY penny.menuitem.iconjumping.jump2.label           "jump2">
+<!ENTITY penny.menuitem.iconjumping.jump3.label           "jump3">
+<!ENTITY penny.menuitem.iconjumping.jump4.label           "jump4">
+<!ENTITY penny.menuitem.iconjumping.jump5.label           "jump5">
+<!ENTITY penny.menuitem.iconjumping.jump6.label           "jump6">
+<!ENTITY penny.menuitem.iconjumping.jump7.label           "jump7">
+<!ENTITY penny.menuitem.iconjumping.jump8.label           "jump8">
+<!ENTITY penny.menuitem.iconjumping.jump9.label           "jump9">
+<!ENTITY penny.menuitem.iconjumping.jump10.label           "jump10">
+<!ENTITY penny.menu.iconlove.label           "Icons Love">
+<!ENTITY penny.menuitem.iconlove.love1.label           "love1">
+<!ENTITY penny.menuitem.iconlove.love2.label           "love2">
+<!ENTITY penny.menuitem.iconlove.love3.label           "love3">
+<!ENTITY penny.menuitem.iconlove.love4.label           "love4">
+<!ENTITY penny.menuitem.iconlove.love5.label           "love5">
+<!ENTITY penny.menuitem.iconlove.love6.label           "love6">
+<!ENTITY penny.menuitem.iconlove.love7.label           "love7">
+<!ENTITY penny.menuitem.iconlove.love8.label           "love8">
+<!ENTITY penny.menuitem.iconlove.love9.label           "love9">
+<!ENTITY penny.menuitem.iconlove.love10.label           "love10">
+<!ENTITY penny.menu.iconsad.label           "Icons Sad">
+<!ENTITY penny.menuitem.iconsad.sad1.label           "sad1">
+<!ENTITY penny.menuitem.iconsad.sad2.label           "sad2">
+<!ENTITY penny.menuitem.iconsad.sad3.label           "sad3">
+<!ENTITY penny.menuitem.iconsad.sad4.label           "sad4">
+<!ENTITY penny.menuitem.iconsad.sad5.label           "sad5">
+<!ENTITY penny.menuitem.iconsad.sad6.label           "sad6">
+<!ENTITY penny.menuitem.iconsad.sad7.label           "sad7">
+<!ENTITY penny.menuitem.iconsad.sad8.label           "sad8">
+<!ENTITY penny.menu.iconevilgrin.label           "Icons Evilgrin">
+<!ENTITY penny.menuitem.iconevilgrin.evil1.label           "evil1">
+<!ENTITY penny.menuitem.iconevilgrin.evil2.label           "evil2">
+<!ENTITY penny.menuitem.iconevilgrin.evil3.label           "evil3">
+<!ENTITY penny.menuitem.iconevilgrin.evil4.label           "evil4">
+<!ENTITY penny.menuitem.iconevilgrin.evil5.label           "evil5">
+<!ENTITY penny.menuitem.iconevilgrin.evil6.label           "evil6">
+<!ENTITY penny.menuitem.iconevilgrin.evil7.label           "evil7">
+<!ENTITY penny.menuitem.iconevilgrin.evil8.label           "evil8">
+<!ENTITY penny.menuitem.iconevilgrin.evil9.label           "evil9">
+<!ENTITY penny.menuitem.iconevilgrin.evil10.label           "evil10">
+<!ENTITY penny.menu.iconangry.label           "Icons Angry">
+<!ENTITY penny.menuitem.iconangry.angry1.label           "angry1">
+<!ENTITY penny.menuitem.iconangry.angry2.label           "angry2">
+<!ENTITY penny.menuitem.iconangry.angry3.label           "angry3">
+<!ENTITY penny.menuitem.iconangry.angry4.label           "angry4">
+<!ENTITY penny.menuitem.iconangry.angry5.label           "angry5">
+<!ENTITY penny.menuitem.iconangry.angry6.label           "angry6">
+<!ENTITY penny.menuitem.iconangry.angry7.label           "angry7">
+<!ENTITY penny.menuitem.iconangry.angry9.label           "angry9">
+<!ENTITY penny.menuitem.iconangry.angry10.label           "angry10">
+<!ENTITY penny.menuitem.iconangry.flameangry.label           "flameangry">
+<!ENTITY penny.menu.iconfighting.label           "Icons Fighting">
+<!ENTITY penny.menuitem.iconfighting.fight1.label           "fight1">
+<!ENTITY penny.menuitem.iconfighting.fight2.label           "fight2">
+<!ENTITY penny.menuitem.iconfighting.fight3.label           "fight3">
+<!ENTITY penny.menuitem.iconfighting.fight4.label           "fight4">
+<!ENTITY penny.menuitem.iconfighting.fight5.label           "fight5">
+<!ENTITY penny.menuitem.iconfighting.fight6.label           "fight6">
+<!ENTITY penny.menuitem.iconfighting.fight7.label           "fight7">
+<!ENTITY penny.menuitem.iconfighting.fight8.label           "fight8">
+<!ENTITY penny.menuitem.iconfighting.fight9.label           "fight9">
+<!ENTITY penny.menuitem.iconfighting.fight10.label           "fight10">
+<!ENTITY penny.menu.iconmiscellaneous.label           "Icons Miscellaneous">
+<!ENTITY penny.menuitem.iconmiscellaneous.blush2.label           "blush2">
+<!ENTITY penny.menuitem.iconmiscellaneous.hairrise.label           "hairrise">
+<!ENTITY penny.menuitem.iconmiscellaneous.listicon.label           "listicon">
+<!ENTITY penny.menuitem.iconmiscellaneous.misc1.label           "misc1">
+<!ENTITY penny.menuitem.iconmiscellaneous.misc2.label           "misc2">
+<!ENTITY penny.menuitem.iconmiscellaneous.misc3.label           "misc3">
+<!ENTITY penny.menuitem.iconmiscellaneous.sleep1.label           "sleep1">
+<!ENTITY penny.menuitem.iconmiscellaneous.tongue.label           "tongue">
+<!ENTITY penny.menuitem.iconmiscellaneous.tongue2.label           "tongue2">

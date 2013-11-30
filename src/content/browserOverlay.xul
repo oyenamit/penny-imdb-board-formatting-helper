@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+
+
+<!-- ***** BEGIN LICENSE BLOCK *****
+-
+- Copyright 2013 Namit Bhalla (oyenamit@gmail.com)
+-
+- Licensed under the Apache License, Version 2.0 (the "License");
+- you may not use this file except in compliance with the License.
+- You may obtain a copy of the License at
+-
+-     http://www.apache.org/licenses/LICENSE-2.0
+-
+- Unless required by applicable law or agreed to in writing, software
+- distributed under the License is distributed on an "AS IS" BASIS,
+- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+- See the License for the specific language governing permissions and
+- limitations under the License.
+-
+- The original code is the "Penny: IMDB Boards Formatting Helper" Firefox extension.
+-
+- ***** END LICENSE BLOCK ***** -->
+
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<!DOCTYPE overlay SYSTEM "chrome://penny/locale/browserOverlay.dtd"> 
+
+<overlay id="penny-browser-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script type="application/x-javascript" src="chrome://penny/content/browserOverlay.js" />
+
+    <!-- Add an entry to the Firefox right-click context menu -->
+    <popup id="contentAreaContextMenu">
+        <menu id="penny-menu" label="&penny.menu.context.label;" accesskey="n">
+            <menupopup id="penny-menupopup-main">
+                <menuitem label="&penny.menuitem.bold.label;" accesskey="b" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[b]" endTag="[/b]"/>
+                <menuitem label="&penny.menuitem.italics.label;" accesskey="I" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[i]" endTag="[/i]"/>
+                <menuitem label="&penny.menuitem.url.label;" accesskey="u" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[url]" endTag="[/url]"/>
+                <menuitem label="&penny.menuitem.email.label;" accesskey="e" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[email]" endTag="[/email]"/>
+
+                <menuseparator/>
+
+                <menuitem label="&penny.menuitem.pre.label;" accesskey="p" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[pre]" endTag="[/pre]"/>
+                <menuitem label="&penny.menuitem.quote.label;" accesskey="q" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[quote]" endTag="[/quote]"/>
+                <menuitem label="&penny.menuitem.spoiler.label;" accesskey="s" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[spoiler]" endTag="[/spoiler]"/>
+
+                <menuseparator/>
+
+                <menu id="penny-colors-menu" label="&penny.menu.colors.label;" accesskey="c">
+                    <menupopup id="penny-menupopup-colors">
+                        <menuitem label="&penny.menuitem.colors.red.label;" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[red]" endTag="[/red]"/>
+                        <menuitem label="&penny.menuitem.colors.green.label;" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[green]" endTag="[/green]"/>
+                        <menuitem label="&penny.menuitem.colors.blue.label;" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[blue]" endTag="[/blue]"/>
+                        <menuitem label="&penny.menuitem.colors.orange.label;" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[orange]" endTag="[/orange]"/>
+                        <menuitem label="&penny.menuitem.colors.black.label;" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[black]" endTag="[/black]"/>
+                        <menuitem label="&penny.menuitem.colors.white.label;" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[white]" endTag="[/white]"/>
+                        <menuitem label="&penny.menuitem.colors.yellow.label;" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[yellow]" endTag="[/yellow]"/>
+                        <menuitem label="&penny.menuitem.colors.purple.label;" oncommand="NSPenny.BrowserOverlay.toggleFormattingTag(event);" startTag="[purple]" endTag="[/purple]"/>
+                    </menupopup>
+                </menu> 
+
+                <menuseparator/>
+                <menu id="penny-iconbasic-menu" label="&penny.menu.iconbasic.label;">
+                    <menupopup id="penny-menupopup-iconbasic">
+                        <menuitem label="&penny.menuitem.iconbasic.4eyes.label;" class="menuitem-iconic" image="chrome://penny/skin/4eyes.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[4eyes]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.afro.label;" class="menuitem-iconic" image="chrome://penny/skin/afro.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[afro]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.angel.label;" class="menuitem-iconic" image="chrome://penny/skin/angel.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angel]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.angry.label;" class="menuitem-iconic" image="chrome://penny/skin/angry.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.argue.label;" class="menuitem-iconic" image="chrome://penny/skin/argue.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[argue]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.aura.label;" class="menuitem-iconic" image="chrome://penny/skin/aura.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[aura]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.bigeek.label;" class="menuitem-iconic" image="chrome://penny/skin/bigeek.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[bigeek]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.biggrin.label;" class="menuitem-iconic" image="chrome://penny/skin/biggrin.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[biggrin]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.bigrazz.label;" class="menuitem-iconic" image="chrome://penny/skin/bigrazz.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[bigrazz]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.birthday.label;" class="menuitem-iconic" image="chrome://penny/skin/birthday.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[birthday]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.blah.label;" class="menuitem-iconic" image="chrome://penny/skin/blah.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[blah]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.blush.label;" class="menuitem-iconic" image="chrome://penny/skin/blush.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[blush]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.bounce.label;" class="menuitem-iconic" image="chrome://penny/skin/bounce.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[bounce]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.caver.label;" class="menuitem-iconic" image="chrome://penny/skin/caver.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[caver]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.chatty.label;" class="menuitem-iconic" image="chrome://penny/skin/chatty.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[chatty]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.cheers.label;" class="menuitem-iconic" image="chrome://penny/skin/cheers.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cheers]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.cloak.label;" class="menuitem-iconic" image="chrome://penny/skin/cloak.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cloak]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.clown.label;" class="menuitem-iconic" image="chrome://penny/skin/clown.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[clown]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.colorful.label;" class="menuitem-iconic" image="chrome://penny/skin/colorful.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[colorful]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.confused.label;" class="menuitem-iconic" image="chrome://penny/skin/confused.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[confused]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.cool.label;" class="menuitem-iconic" image="chrome://penny/skin/cool.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cool]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.cry.label;" class="menuitem-iconic" image="chrome://penny/skin/cry.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cry]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.dead.label;" class="menuitem-iconic" image="chrome://penny/skin/dead.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[dead]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.devil.label;" class="menuitem-iconic" image="chrome://penny/skin/devil.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[devil]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.eek.label;" class="menuitem-iconic" image="chrome://penny/skin/eek.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[eek]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.embarrassed.label;" class="menuitem-iconic" image="chrome://penny/skin/embarrassed.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[embarrassed]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.explode.label;" class="menuitem-iconic" image="chrome://penny/skin/explode.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[explode]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.eyes.label;" class="menuitem-iconic" image="chrome://penny/skin/eyes.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[eyes]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.frozen.label;" class="menuitem-iconic" image="chrome://penny/skin/frozen.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[frozen]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.glasses.label;" class="menuitem-iconic" image="chrome://penny/skin/glasses.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[glasses]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.gonemad.label;" class="menuitem-iconic" image="chrome://penny/skin/gonemad.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[gonemad]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.gum.label;" class="menuitem-iconic" image="chrome://penny/skin/gum.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[gum]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.hehe.label;" class="menuitem-iconic" image="chrome://penny/skin/hehe.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[hehe]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.hide.label;" class="menuitem-iconic" image="chrome://penny/skin/hide.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[hide]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.iloveu.label;" class="menuitem-iconic" image="chrome://penny/skin/iloveu.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[iloveu]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.interest.label;" class="menuitem-iconic" image="chrome://penny/skin/interest.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[interest]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.joker.label;" class="menuitem-iconic" image="chrome://penny/skin/joker.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[joker]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.kiss.label;" class="menuitem-iconic" image="chrome://penny/skin/kiss.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[kiss]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.laugh.label;" class="menuitem-iconic" image="chrome://penny/skin/laugh.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[laugh]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.newbie.label;" class="menuitem-iconic" image="chrome://penny/skin/newbie.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[newbie]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.ninja.label;" class="menuitem-iconic" image="chrome://penny/skin/ninja.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[ninja]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.no.label;" class="menuitem-iconic" image="chrome://penny/skin/no.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[no]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.noir.label;" class="menuitem-iconic" image="chrome://penny/skin/noir.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[noir]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.none.label;" class="menuitem-iconic" image="chrome://penny/skin/none.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[none]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.odd.label;" class="menuitem-iconic" image="chrome://penny/skin/odd.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[odd]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.out.label;" class="menuitem-iconic" image="chrome://penny/skin/out.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[out]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.party.label;" class="menuitem-iconic" image="chrome://penny/skin/party.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[party]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.popcorn.label;" class="menuitem-iconic" image="chrome://penny/skin/popcorn.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[popcorn]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.rainbow.label;" class="menuitem-iconic" image="chrome://penny/skin/rainbow.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[rainbow]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.razz.label;" class="menuitem-iconic" image="chrome://penny/skin/razz.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[razz]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.roll.label;" class="menuitem-iconic" image="chrome://penny/skin/roll.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[roll]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.roll2.label;" class="menuitem-iconic" image="chrome://penny/skin/roll2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[roll2]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.royal.label;" class="menuitem-iconic" image="chrome://penny/skin/royal.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[royal]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.sad.label;" class="menuitem-iconic" image="chrome://penny/skin/sad.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sad]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.shy.label;" class="menuitem-iconic" image="chrome://penny/skin/shy.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[shy]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.sigh.label;" class="menuitem-iconic" image="chrome://penny/skin/sigh.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sigh]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.sleep.label;" class="menuitem-iconic" image="chrome://penny/skin/sleep.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sleep]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.smile.label;" class="menuitem-iconic" image="chrome://penny/skin/smile.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[smile]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.smoke1.label;" class="menuitem-iconic" image="chrome://penny/skin/smoke1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[smoke1]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.snow.label;" class="menuitem-iconic" image="chrome://penny/skin/snow.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[snow]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.sword.label;" class="menuitem-iconic" image="chrome://penny/skin/sword.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sword]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.trendy.label;" class="menuitem-iconic" image="chrome://penny/skin/trendy.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[trendy]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.uhoh.label;" class="menuitem-iconic" image="chrome://penny/skin/uhoh.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[uhoh]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.upset.label;" class="menuitem-iconic" image="chrome://penny/skin/upset.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[upset]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.wave.label;" class="menuitem-iconic" image="chrome://penny/skin/wave.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[wave]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.weird.label;" class="menuitem-iconic" image="chrome://penny/skin/weird.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[weird]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.white.label;" class="menuitem-iconic" image="chrome://penny/skin/white.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[white]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.wild.label;" class="menuitem-iconic" image="chrome://penny/skin/wild.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[wild]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.wink.label;" class="menuitem-iconic" image="chrome://penny/skin/wink.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[wink]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.winkgrin.label;" class="menuitem-iconic" image="chrome://penny/skin/winkgrin.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[winkgrin]"/>
+                        <menuitem label="&penny.menuitem.iconbasic.yes.label;" class="menuitem-iconic" image="chrome://penny/skin/yes.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[yes]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconanimals-menu" label="&penny.menu.iconanimals.label;">
+                    <menupopup id="penny-menupopup-iconanimals">
+                        <menuitem label="&penny.menuitem.iconanimals.animal.label;" class="menuitem-iconic" image="chrome://penny/skin/animal.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[animal]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.bunny.label;" class="menuitem-iconic" image="chrome://penny/skin/bunny.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[bunny]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.butterfly.label;" class="menuitem-iconic" image="chrome://penny/skin/butterfly.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[butterfly]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.cat.label;" class="menuitem-iconic" image="chrome://penny/skin/cat.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cat]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.cats.label;" class="menuitem-iconic" image="chrome://penny/skin/cats.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cats]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.dog.label;" class="menuitem-iconic" image="chrome://penny/skin/dog.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[dog]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.flowercat.label;" class="menuitem-iconic" image="chrome://penny/skin/flowercat.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[flowercat]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.nicebat.label;" class="menuitem-iconic" image="chrome://penny/skin/nicebat.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[nicebat]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.pig.label;" class="menuitem-iconic" image="chrome://penny/skin/pig.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[pig]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.spider.label;" class="menuitem-iconic" image="chrome://penny/skin/spider.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[spider]"/>
+                        <menuitem label="&penny.menuitem.iconanimals.whitecat.label;" class="menuitem-iconic" image="chrome://penny/skin/whitecat.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[whitecat]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconconfused-menu" label="&penny.menu.iconconfused.label;">
+                    <menupopup id="penny-menupopup-iconconfused">
+                        <menuitem label="&penny.menuitem.iconconfused.change.label;" class="menuitem-iconic" image="chrome://penny/skin/change.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[change]"/>
+                        <menuitem label="&penny.menuitem.iconconfused.conf1.label;" class="menuitem-iconic" image="chrome://penny/skin/conf1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[conf1]"/>
+                        <menuitem label="&penny.menuitem.iconconfused.conf2.label;" class="menuitem-iconic" image="chrome://penny/skin/conf2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[conf2]"/>
+                        <menuitem label="&penny.menuitem.iconconfused.conf3.label;" class="menuitem-iconic" image="chrome://penny/skin/conf3.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[conf3]"/>
+                        <menuitem label="&penny.menuitem.iconconfused.devilconf.label;" class="menuitem-iconic" image="chrome://penny/skin/devilconf.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[devilconf]"/>
+                        <menuitem label="&penny.menuitem.iconconfused.giveup.label;" class="menuitem-iconic" image="chrome://penny/skin/giveup.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[giveup]"/>
+                        <menuitem label="&penny.menuitem.iconconfused.help.label;" class="menuitem-iconic" image="chrome://penny/skin/help.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[help]"/>
+                        <menuitem label="&penny.menuitem.iconconfused.hmm.label;" class="menuitem-iconic" image="chrome://penny/skin/hmm.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[hmm]"/>
+                        <menuitem label="&penny.menuitem.iconconfused.mjeyds.label;" class="menuitem-iconic" image="chrome://penny/skin/mjeyds.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[mjeyds]"/>
+                        <menuitem label="&penny.menuitem.iconconfused.wazup.label;" class="menuitem-iconic" image="chrome://penny/skin/wazup.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[wazup]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconcool-menu" label="&penny.menu.iconcool.label;">
+                    <menupopup id="penny-menupopup-iconcool">
+                        <menuitem label="&penny.menuitem.iconcool.cool1.label;" class="menuitem-iconic" image="chrome://penny/skin/cool1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cool1]"/>
+                        <menuitem label="&penny.menuitem.iconcool.cool2.label;" class="menuitem-iconic" image="chrome://penny/skin/cool2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cool2]"/>
+                        <menuitem label="&penny.menuitem.iconcool.cooldance.label;" class="menuitem-iconic" image="chrome://penny/skin/cooldance.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cooldance]"/>
+                        <menuitem label="&penny.menuitem.iconcool.cooldance2.label;" class="menuitem-iconic" image="chrome://penny/skin/cooldance2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[cooldance2]"/>
+                        <menuitem label="&penny.menuitem.iconcool.coolmonkey.label;" class="menuitem-iconic" image="chrome://penny/skin/coolmonkey.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[coolmonkey]"/>
+                        <menuitem label="&penny.menuitem.iconcool.hasta.label;" class="menuitem-iconic" image="chrome://penny/skin/hasta.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[hasta]"/>
+                        <menuitem label="&penny.menuitem.iconcool.trum.label;" class="menuitem-iconic" image="chrome://penny/skin/trum.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[trum]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconhappy-menu" label="&penny.menu.iconhappy.label;">
+                    <menupopup id="penny-menupopup-iconhappy">
+                        <menuitem label="&penny.menuitem.iconhappy.2face.label;" class="menuitem-iconic" image="chrome://penny/skin/2face.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[2face]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.3c.label;" class="menuitem-iconic" image="chrome://penny/skin/3c.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[3c]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.3eyes.label;" class="menuitem-iconic" image="chrome://penny/skin/3eyes.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[3eyes]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.blink.label;" class="menuitem-iconic" image="chrome://penny/skin/blink.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[blink]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.clap.label;" class="menuitem-iconic" image="chrome://penny/skin/clap.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[clap]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.hat.label;" class="menuitem-iconic" image="chrome://penny/skin/hat.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[hat]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.hippy.label;" class="menuitem-iconic" image="chrome://penny/skin/hippy.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[hippy]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.sombrero.label;" class="menuitem-iconic" image="chrome://penny/skin/sombrero.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sombrero]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.square.label;" class="menuitem-iconic" image="chrome://penny/skin/square.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[square]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.wave3.label;" class="menuitem-iconic" image="chrome://penny/skin/wave3.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[wave3]"/>
+                        <menuitem label="&penny.menuitem.iconhappy.xmas.label;" class="menuitem-iconic" image="chrome://penny/skin/xmas.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[xmas]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconjumping-menu" label="&penny.menu.iconjumping.label;">
+                    <menupopup id="penny-menupopup-iconjumping">
+                        <menuitem label="&penny.menuitem.iconjumping.jump1.label;" class="menuitem-iconic" image="chrome://penny/skin/jump1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump1]"/>
+                        <menuitem label="&penny.menuitem.iconjumping.jump2.label;" class="menuitem-iconic" image="chrome://penny/skin/jump2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump2]"/>
+                        <menuitem label="&penny.menuitem.iconjumping.jump3.label;" class="menuitem-iconic" image="chrome://penny/skin/jump3.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump3]"/>
+                        <menuitem label="&penny.menuitem.iconjumping.jump4.label;" class="menuitem-iconic" image="chrome://penny/skin/jump4.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump4]"/>
+                        <menuitem label="&penny.menuitem.iconjumping.jump5.label;" class="menuitem-iconic" image="chrome://penny/skin/jump5.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump5]"/>
+                        <menuitem label="&penny.menuitem.iconjumping.jump6.label;" class="menuitem-iconic" image="chrome://penny/skin/jump6.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump6]"/>
+                        <menuitem label="&penny.menuitem.iconjumping.jump7.label;" class="menuitem-iconic" image="chrome://penny/skin/jump7.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump7]"/>
+                        <menuitem label="&penny.menuitem.iconjumping.jump8.label;" class="menuitem-iconic" image="chrome://penny/skin/jump8.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump8]"/>
+                        <menuitem label="&penny.menuitem.iconjumping.jump9.label;" class="menuitem-iconic" image="chrome://penny/skin/jump9.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump9]"/>
+                        <menuitem label="&penny.menuitem.iconjumping.jump10.label;" class="menuitem-iconic" image="chrome://penny/skin/jump10.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[jump10]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconlove-menu" label="&penny.menu.iconlove.label;">
+                    <menupopup id="penny-menupopup-iconlove">
+                        <menuitem label="&penny.menuitem.iconlove.love1.label;" class="menuitem-iconic" image="chrome://penny/skin/love1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love1]"/>
+                        <menuitem label="&penny.menuitem.iconlove.love2.label;" class="menuitem-iconic" image="chrome://penny/skin/love2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love2]"/>
+                        <menuitem label="&penny.menuitem.iconlove.love3.label;" class="menuitem-iconic" image="chrome://penny/skin/love3.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love3]"/>
+                        <menuitem label="&penny.menuitem.iconlove.love4.label;" class="menuitem-iconic" image="chrome://penny/skin/love4.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love4]"/>
+                        <menuitem label="&penny.menuitem.iconlove.love5.label;" class="menuitem-iconic" image="chrome://penny/skin/love5.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love5]"/>
+                        <menuitem label="&penny.menuitem.iconlove.love6.label;" class="menuitem-iconic" image="chrome://penny/skin/love6.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love6]"/>
+                        <menuitem label="&penny.menuitem.iconlove.love7.label;" class="menuitem-iconic" image="chrome://penny/skin/love7.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love7]"/>
+                        <menuitem label="&penny.menuitem.iconlove.love8.label;" class="menuitem-iconic" image="chrome://penny/skin/love8.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love8]"/>
+                        <menuitem label="&penny.menuitem.iconlove.love9.label;" class="menuitem-iconic" image="chrome://penny/skin/love9.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love9]"/>
+                        <menuitem label="&penny.menuitem.iconlove.love10.label;" class="menuitem-iconic" image="chrome://penny/skin/love10.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[love10]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconsad-menu" label="&penny.menu.iconsad.label;">
+                    <menupopup id="penny-menupopup-iconsad">
+                        <menuitem label="&penny.menuitem.iconsad.sad1.label;" class="menuitem-iconic" image="chrome://penny/skin/sad1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sad1]"/>
+                        <menuitem label="&penny.menuitem.iconsad.sad2.label;" class="menuitem-iconic" image="chrome://penny/skin/sad2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sad2]"/>
+                        <menuitem label="&penny.menuitem.iconsad.sad3.label;" class="menuitem-iconic" image="chrome://penny/skin/sad3.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sad3]"/>
+                        <menuitem label="&penny.menuitem.iconsad.sad4.label;" class="menuitem-iconic" image="chrome://penny/skin/sad4.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sad4]"/>
+                        <menuitem label="&penny.menuitem.iconsad.sad5.label;" class="menuitem-iconic" image="chrome://penny/skin/sad5.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sad5]"/>
+                        <menuitem label="&penny.menuitem.iconsad.sad6.label;" class="menuitem-iconic" image="chrome://penny/skin/sad6.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sad6]"/>
+                        <menuitem label="&penny.menuitem.iconsad.sad7.label;" class="menuitem-iconic" image="chrome://penny/skin/sad7.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sad7]"/>
+                        <menuitem label="&penny.menuitem.iconsad.sad8.label;" class="menuitem-iconic" image="chrome://penny/skin/sad8.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sad8]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconevilgrin-menu" label="&penny.menu.iconevilgrin.label;">
+                    <menupopup id="penny-menupopup-iconevilgrin">
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil1.label;" class="menuitem-iconic" image="chrome://penny/skin/evil1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil1]"/>
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil2.label;" class="menuitem-iconic" image="chrome://penny/skin/evil2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil2]"/>
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil3.label;" class="menuitem-iconic" image="chrome://penny/skin/evil3.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil3]"/>
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil4.label;" class="menuitem-iconic" image="chrome://penny/skin/evil4.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil4]"/>
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil5.label;" class="menuitem-iconic" image="chrome://penny/skin/evil5.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil5]"/>
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil6.label;" class="menuitem-iconic" image="chrome://penny/skin/evil6.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil6]"/>
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil7.label;" class="menuitem-iconic" image="chrome://penny/skin/evil7.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil7]"/>
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil8.label;" class="menuitem-iconic" image="chrome://penny/skin/evil8.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil8]"/>
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil9.label;" class="menuitem-iconic" image="chrome://penny/skin/evil9.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil9]"/>
+                        <menuitem label="&penny.menuitem.iconevilgrin.evil10.label;" class="menuitem-iconic" image="chrome://penny/skin/evil10.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[evil10]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconangry-menu" label="&penny.menu.iconangry.label;">
+                    <menupopup id="penny-menupopup-iconangry">
+                        <menuitem label="&penny.menuitem.iconangry.angry1.label;" class="menuitem-iconic" image="chrome://penny/skin/angry1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry1]"/>
+                        <menuitem label="&penny.menuitem.iconangry.angry2.label;" class="menuitem-iconic" image="chrome://penny/skin/angry2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry2]"/>
+                        <menuitem label="&penny.menuitem.iconangry.angry3.label;" class="menuitem-iconic" image="chrome://penny/skin/angry3.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry3]"/>
+                        <menuitem label="&penny.menuitem.iconangry.angry4.label;" class="menuitem-iconic" image="chrome://penny/skin/angry4.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry4]"/>
+                        <menuitem label="&penny.menuitem.iconangry.angry5.label;" class="menuitem-iconic" image="chrome://penny/skin/angry5.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry5]"/>
+                        <menuitem label="&penny.menuitem.iconangry.angry6.label;" class="menuitem-iconic" image="chrome://penny/skin/angry6.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry6]"/>
+                        <menuitem label="&penny.menuitem.iconangry.angry7.label;" class="menuitem-iconic" image="chrome://penny/skin/angry7.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry7]"/>
+                        <menuitem label="&penny.menuitem.iconangry.angry9.label;" class="menuitem-iconic" image="chrome://penny/skin/angry9.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry9]"/>
+                        <menuitem label="&penny.menuitem.iconangry.angry10.label;" class="menuitem-iconic" image="chrome://penny/skin/angry10.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[angry10]"/>
+                        <menuitem label="&penny.menuitem.iconangry.flameangry.label;" class="menuitem-iconic" image="chrome://penny/skin/flameangry.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[flameangry]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconfighting-menu" label="&penny.menu.iconfighting.label;">
+                    <menupopup id="penny-menupopup-iconfighting">
+                        <menuitem label="&penny.menuitem.iconfighting.fight1.label;" class="menuitem-iconic" image="chrome://penny/skin/fight1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight1]"/>
+                        <menuitem label="&penny.menuitem.iconfighting.fight2.label;" class="menuitem-iconic" image="chrome://penny/skin/fight2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight2]"/>
+                        <menuitem label="&penny.menuitem.iconfighting.fight3.label;" class="menuitem-iconic" image="chrome://penny/skin/fight3.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight3]"/>
+                        <menuitem label="&penny.menuitem.iconfighting.fight4.label;" class="menuitem-iconic" image="chrome://penny/skin/fight4.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight4]"/>
+                        <menuitem label="&penny.menuitem.iconfighting.fight5.label;" class="menuitem-iconic" image="chrome://penny/skin/fight5.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight5]"/>
+                        <menuitem label="&penny.menuitem.iconfighting.fight6.label;" class="menuitem-iconic" image="chrome://penny/skin/fight6.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight6]"/>
+                        <menuitem label="&penny.menuitem.iconfighting.fight7.label;" class="menuitem-iconic" image="chrome://penny/skin/fight7.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight7]"/>
+                        <menuitem label="&penny.menuitem.iconfighting.fight8.label;" class="menuitem-iconic" image="chrome://penny/skin/fight8.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight8]"/>
+                        <menuitem label="&penny.menuitem.iconfighting.fight9.label;" class="menuitem-iconic" image="chrome://penny/skin/fight9.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight9]"/>
+                        <menuitem label="&penny.menuitem.iconfighting.fight10.label;" class="menuitem-iconic" image="chrome://penny/skin/fight10.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[fight10]"/>
+                    </menupopup>
+                </menu>
+                <menu id="penny-iconmiscellaneous-menu" label="&penny.menu.iconmiscellaneous.label;">
+                    <menupopup id="penny-menupopup-iconmiscellaneous">
+                        <menuitem label="&penny.menuitem.iconmiscellaneous.blush2.label;" class="menuitem-iconic" image="chrome://penny/skin/blush2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[blush2]"/>
+                        <menuitem label="&penny.menuitem.iconmiscellaneous.hairrise.label;" class="menuitem-iconic" image="chrome://penny/skin/hairrise.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[hairrise]"/>
+                        <menuitem label="&penny.menuitem.iconmiscellaneous.listicon.label;" class="menuitem-iconic" image="chrome://penny/skin/listicon.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[listicon]"/>
+                        <menuitem label="&penny.menuitem.iconmiscellaneous.misc1.label;" class="menuitem-iconic" image="chrome://penny/skin/misc1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[misc1]"/>
+                        <menuitem label="&penny.menuitem.iconmiscellaneous.misc2.label;" class="menuitem-iconic" image="chrome://penny/skin/misc2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[misc2]"/>
+                        <menuitem label="&penny.menuitem.iconmiscellaneous.misc3.label;" class="menuitem-iconic" image="chrome://penny/skin/misc3.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[misc3]"/>
+                        <menuitem label="&penny.menuitem.iconmiscellaneous.sleep1.label;" class="menuitem-iconic" image="chrome://penny/skin/sleep1.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[sleep1]"/>
+                        <menuitem label="&penny.menuitem.iconmiscellaneous.tongue.label;" class="menuitem-iconic" image="chrome://penny/skin/tongue.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[tongue]"/>
+                        <menuitem label="&penny.menuitem.iconmiscellaneous.tongue2.label;" class="menuitem-iconic" image="chrome://penny/skin/tongue2.png" oncommand="NSPenny.BrowserOverlay.insertIconTag(event);" iconTag="[tongue2]"/>
+                    </menupopup>
+                </menu>
+            </menupopup>
+        </menu>
+    </popup>
+</overlay>
